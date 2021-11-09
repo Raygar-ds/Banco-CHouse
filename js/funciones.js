@@ -35,7 +35,7 @@
 const neto = (x, y) => x - y; 
 const total = (x, y) => x + y;
 
-function tna () {
+function resultTna () {
     let days = Number(prompt(`Seleccione la cantidad de dias para realizar el plazo fijo:
     1- 30 
     2- 60
@@ -51,7 +51,7 @@ function tna () {
         return days;
     } else {
         alert('Datos incorrectos.');
-        tna()
+        resultTna()
     }
     return days;
 }
@@ -74,12 +74,12 @@ console.log(invertir);
 
 if (invertir > deposito){
     alert('Monto incorrecto.');
-    invertirBanco()  
+    invertirBanco()
 } else {
     
 }
 
-let days = tna();
+let days = resultTna();
 console.log(days);
   
 let ganancia = invertir * days;
