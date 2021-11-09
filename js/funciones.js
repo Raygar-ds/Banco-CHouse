@@ -51,7 +51,7 @@ function resultTna () {
         return days;
     } else {
         alert('Datos incorrectos.');
-        resultTna()
+        days = resultTna()
     }
     return days;
 }
@@ -74,7 +74,7 @@ console.log(invertir);
 
 if (invertir > deposito){
     alert('Monto incorrecto.');
-    invertirBanco()
+    invertir = invertirBanco()
 } else {
     
 }
