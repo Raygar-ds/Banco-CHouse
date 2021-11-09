@@ -7,30 +7,6 @@
   
 
 // Arrancamos haciendo un deposito y despues enunciando cuando deposito.
-// let deposito = Number(prompt('Porfavor introducir la cantidad que desea depositar a su cuenta.'));
-// alert(`Usted a depositado $${deposito}.`)
-
-// function inversionBanco () {
-//     let ganancia = plazoFijo(invertir);
-//     console.log(ganancia);
-        
-//     alert(`Cumpliendo una inversion de ${days} dias, obtendra un ganancia estimada de ${ganancia}`);
-//     alert(`Usted a generando $${neto(ganancia, invertir)}.`);
-//     alert(`Su nuevo balance es de $${total(ganancia, nuevoDeposito)}.`);
-// }
-// inversionBanco()
-
-// function banco () {
-//     let ganancia = plazoFijo(invertir);
-//     console.log(ganancia);
-        
-//     alert(`Cumpliendo una inversion de ${days} dias, obtendra un ganancia estimada de ${ganancia}`);
-//     alert(`Usted a generando $${neto(ganancia, invertir)}.`);
-//     alert(`Su nuevo balance es de $${total(ganancia, nuevoDeposito)}.`);
-// }
-
-// const plazoFijo = (invertir) => invertir * tna;
-// plazoFijo(invertir);
 
 const neto = (x, y) => x - y; 
 const total = (x, y) => x + y;
@@ -67,9 +43,36 @@ function invertirBanco () {
     return invertir;
 }    
 
-let deposito = depositarBanco();
+function questionBanco () {
+    let respuesta = prompt(`Le gustaria hacer un deposito?
+    1- Si
+    2- No`)
+
+    return respuesta;
+}
+
+class cuentaBanco {
+    constructor(nombre, apellido, userId) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.userId = userId;
+    }
+}
+
+const cliente1 = new cuentaBanco("Diego", "Santurtun", 101);
+
+
+// Dar la bienvenida al usuario.
+
+alert(`Bienvenido ${cliente1.nombre} ${cliente1.apellido}, su numero de ID es ${cliente1.userId}.`);
+
+
+// let respuesta = questionBanco();
+// console.log(respuesta)
+
+var deposito = depositarBanco();
 console.log(deposito);
-let invertir = invertirBanco();
+var invertir = invertirBanco();
 console.log(invertir);
 
 if (invertir > deposito){
@@ -88,6 +91,6 @@ let nuevoDeposito = deposito - invertir;
 
 console.log(ganancia);
         
-alert(`Cumpliendo los dias de inversion, obtendra un ganancia estimada de ${ganancia}`);
+alert(`Cumpliendo los dias de inversion, obtendra un ganancia estimada de $${ganancia}`);
 alert(`Usted a generando $${neto(ganancia, invertir)}.`);
 alert(`Su nuevo balance es de $${total(ganancia, nuevoDeposito)}.`);
