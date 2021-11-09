@@ -5,6 +5,18 @@ class cuentaBanco {
         this.userId = userId;
         this.edad = edad;
     }
+    controlRespuesta(){
+
+        if (this == si) {
+            let deposito = depositarBanco();
+            console.log(deposito);
+        } else if (respuesta.toLowerCase == no) {
+            let invertir = invertirBanco();
+            console.log(invertir);
+        } else {
+            alert('Selecciono una opción inccorecta')
+        }
+    }
 }
 
 const cliente1 = new cuentaBanco("Diego", "Santurtun", 101 , 27 )
@@ -17,10 +29,16 @@ function questionBanco () {
     return respuesta;
 }
 
-controlRespuesta() {
+controlRespuesta(){
 
     if (respuesta.toLowerCase == si) {
         let deposito = depositarBanco();
-    console.log(deposito);
+        console.log(deposito);
+    } else if (respuesta.toLowerCase == no) {
+        let invertir = invertirBanco();
+        console.log(invertir);
+    } else {
+        alert('Selecciono una opción inccorecta')
+        respuesta = questionBanco();
     }
 }

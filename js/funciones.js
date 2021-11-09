@@ -33,11 +33,13 @@ function resultTna () {
 }
 
 function depositarBanco () {
+    // let deposito = document.getElementsByName("plata")[0].value;
     let deposito = Number(prompt('Porfavor introducir la cantidad que desea depositar a su cuenta.'));
     return deposito;
 }
 
 function invertirBanco () {
+    // let invertir = document.getElementsByName("plata")[0].value;
     let invertir = Number(prompt(`De los $${deposito}, cuanto gustaria invertir?`));
     
     return invertir;
@@ -70,9 +72,9 @@ alert(`Bienvenido ${cliente1.nombre} ${cliente1.apellido}, su numero de ID es ${
 // let respuesta = questionBanco();
 // console.log(respuesta)
 
-var deposito = depositarBanco();
+let deposito = depositarBanco();
 console.log(deposito);
-var invertir = invertirBanco();
+let invertir = invertirBanco();
 console.log(invertir);
 
 if (invertir > deposito){
@@ -82,15 +84,15 @@ if (invertir > deposito){
     
 }
 
-let days = resultTna();
-console.log(days);
+// let days = resultTna();
+// console.log(days);
   
-let ganancia = invertir * days;
+// let ganancia = invertir * days;
 
-let nuevoDeposito = deposito - invertir;
+// let nuevoDeposito = deposito - invertir;
 
-console.log(ganancia);
+// console.log(ganancia);
         
-alert(`Cumpliendo los dias de inversion, obtendra un ganancia estimada de $${ganancia}`);
-alert(`Usted a generando $${neto(ganancia, invertir)}.`);
-alert(`Su nuevo balance es de $${total(ganancia, nuevoDeposito)}.`);
+// alert(`Cumpliendo los dias de inversion, obtendra un ganancia estimada de $${ganancia}`);
+// alert(`Usted a generando $${neto(ganancia, invertir)}.`);
+// alert(`Su nuevo balance es de $${total(ganancia, nuevoDeposito)}.`);
