@@ -18,10 +18,10 @@ function resultTna () {
     3- 90`));
     if(days == 30) {
         days = 1.37
-        return tna;
+        return days;
     } else if (days == 60) {
         days = 1.39
-        return tna;
+        return days;
     } else if (days == 90) {
         days = 1.41
         return days;
@@ -53,6 +53,11 @@ function questionBanco () {
     return respuesta;
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+// ACA ESTA MI INCORPORACION DE OBJECTO EN MI PROYECTO, SUJERO A MEJORA!
 class cuentaBanco {
     constructor(nombre, apellido, userId) {
         this.nombre = nombre;
@@ -61,19 +66,21 @@ class cuentaBanco {
     }
 }
 
-const cliente1 = new cuentaBanco("Diego", "Santurtun", 101);
+const cliente1 = new cuentaBanco("Diego", "Santurtun", getRandomInt(999));
+
 
 
 // Dar la bienvenida al usuario.
 
-alert(`Bienvenido ${cliente1.nombre} ${cliente1.apellido}, su numero de ID es ${cliente1.userId}.`);
-
+// alert(`Bienvenido ${cliente1.nombre} ${cliente1.apellido}, su numero de ID es ${cliente1.userId}.`);
+document.getElementById("saludo").innerHTML = (`Bienvenido ${cliente1.nombre} ${cliente1.apellido}, su numero de ID es ${cliente1.userId}.`);
 
 // let respuesta = questionBanco();
 // console.log(respuesta)
 
 let deposito = depositarBanco();
 console.log(deposito);
+document.getElementById("depOut").innerHTML = '$ ' + deposito;
 let invertir = invertirBanco();
 console.log(invertir);
 
@@ -84,15 +91,21 @@ if (invertir > deposito){
     
 }
 
-// let days = resultTna();
-// console.log(days);
-  
-// let ganancia = invertir * days;
+document.getElementById("textInvert").innerHTML = '$ ' + invertir;
 
-// let nuevoDeposito = deposito - invertir;
+let days = resultTna();
+console.log(days);
+document.getElementById("interes").innerHTML = `% ${days * 100 - 100}`;
 
-// console.log(ganancia);
+let ganancia = invertir * days;
+
+let nuevoDeposito = deposito - invertir;
+
+console.log(ganancia);
         
 // alert(`Cumpliendo los dias de inversion, obtendra un ganancia estimada de $${ganancia}`);
+document.getElementById("ganancia").innerHTML = '$ ' + ganancia;
 // alert(`Usted a generando $${neto(ganancia, invertir)}.`);
+document.getElementById("neto").innerHTML = '$ ' + neto(ganancia, invertir);
 // alert(`Su nuevo balance es de $${total(ganancia, nuevoDeposito)}.`);
+document.getElementById("total").innerHTML = '$ ' + total(ganancia, nuevoDeposito);

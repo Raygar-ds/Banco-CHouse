@@ -1,3 +1,5 @@
+// aca use de notas para crear y despues incorporar a FUNCIONES.JS
+
 class cuentaBanco {
     constructor(nombre, apellido, userId, edad) {
         this.nombre = nombre;
@@ -27,18 +29,4 @@ function questionBanco () {
     1- Si
     2- No`);
     return respuesta;
-}
-
-controlRespuesta(){
-
-    if (respuesta.toLowerCase == si) {
-        let deposito = depositarBanco();
-        console.log(deposito);
-    } else if (respuesta.toLowerCase == no) {
-        let invertir = invertirBanco();
-        console.log(invertir);
-    } else {
-        alert('Selecciono una opción inccorecta')
-        respuesta = questionBanco();
-    }
 }
